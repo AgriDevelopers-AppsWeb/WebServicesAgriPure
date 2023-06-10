@@ -6905,24 +6905,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rodri\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\crist\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rodri\\source\\repos\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj",
+      "projectUniqueName": "F:\\2023 - l\\Aplicaciones Web\\TB3\\BackendAgriPure\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj",
       "projectName": "WebServicesAgriPure",
-      "projectPath": "C:\\Users\\rodri\\source\\repos\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj",
-      "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rodri\\source\\repos\\WebServicesAgriPure\\WebServicesAgriPure\\obj\\",
+      "projectPath": "F:\\2023 - l\\Aplicaciones Web\\TB3\\BackendAgriPure\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj",
+      "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+      "outputPath": "F:\\2023 - l\\Aplicaciones Web\\TB3\\BackendAgriPure\\WebServicesAgriPure\\WebServicesAgriPure\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6930,7 +6925,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files (x86)\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7005,7 +7000,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

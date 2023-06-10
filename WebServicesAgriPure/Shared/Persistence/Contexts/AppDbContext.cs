@@ -6,6 +6,7 @@ namespace WebServicesAgriPure.Shared.Persistence.Contexts
     public class AppDbContext : DbContext
     {
         public DbSet<Plant> Plants { get; set; }
+        public DbSet<Plot> Plots { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -14,6 +15,7 @@ namespace WebServicesAgriPure.Shared.Persistence.Contexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            //PLANTS
             builder.Entity<Plant>().ToTable("Plants");
             builder.Entity<Plant>().HasKey(p => p.Id);
             builder.Entity<Plant>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
@@ -33,6 +35,15 @@ namespace WebServicesAgriPure.Shared.Persistence.Contexts
             builder.Entity<Plant>().Property(p => p.IntervaleFert).IsRequired();
             builder.Entity<Plant>().Property(p => p.IntervaleFumig).IsRequired();
             builder.Entity<Plant>().Property(p => p.SavePlant);
+            
+            //PLOTS
+            builder.Entity<Plot>().ToTable("Plots");
+            builder.Entity<Plot>().HasKey(p => p.Id);
+            builder.Entity<Plot>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Plot>().Property(p => p.Name).IsRequired().HasMaxLength(50);
+            builder.Entity<Plot>().Property(p => p.Area).IsRequired();
+            builder.Entity<Plot>().Property(p => p.Detail).HasMaxLength(120);
+            builder.Entity<Plot>().Property(p => p.Quantity).IsRequired();
         }
     }
 }

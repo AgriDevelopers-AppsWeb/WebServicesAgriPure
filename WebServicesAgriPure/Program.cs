@@ -32,6 +32,9 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Dependency Injection Configuration
 builder.Services.AddScoped<IPlantRepository, PlantRepository>();
 builder.Services.AddScoped<IPlantService, PlantService>();
+builder.Services.AddScoped<IPlantService, PlantService>();
+builder.Services.AddScoped<IPlotRepository, PlotRepository>();
+builder.Services.AddScoped<IPlotService, PlotService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // AutoMapper Configuration
