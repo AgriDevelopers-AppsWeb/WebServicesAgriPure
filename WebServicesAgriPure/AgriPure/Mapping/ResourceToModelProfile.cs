@@ -9,6 +9,7 @@ namespace WebServicesAgriPure.AgriPure.Mapping
         public ResourceToModelProfile()
         {
             CreateMap < SavePlantResource, Plant>();
+            CreateMap<SavePlotResource, Plot>();
         }
     }
 }
