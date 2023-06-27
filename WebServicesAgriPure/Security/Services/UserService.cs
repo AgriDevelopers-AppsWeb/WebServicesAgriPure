@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
+using WebServicesAgriPure.AgriPure.Domain.Models;
 using WebServicesAgriPure.AgriPure.Domain.Repositories;
 using WebServicesAgriPure.Security.Authorization.Handlers.Interfaces;
 using WebServicesAgriPure.Security.Domain.Models;
 using WebServicesAgriPure.Security.Domain.Repositories;
 using WebServicesAgriPure.Security.Domain.Services;
+using WebServicesAgriPure.Security.Domain.Services.Communication;
 using WebServicesAgriPure.Security.Exceptions;
 using WebServicesAgriPure.Security.Services.Communication;
 using BCryptNet = BCrypt.Net.BCrypt;
@@ -13,13 +15,15 @@ namespace WebServicesAgriPure.Security.Services;
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
+    private readonly IPlantRepository _plantRepository;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IJwtHandler _jwtHandler;
     private readonly IMapper _mapper;
     
-    public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork, IMapper mapper, IJwtHandler jwtHandler)
+    public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork, IMapper mapper, IJwtHandler jwtHandler, IPlantRepository plantRepository)
     {
         _userRepository = userRepository;
+        _plantRepository = plantRepository;
         _unitOfWork = unitOfWork;
         _jwtHandler = jwtHandler;
         _mapper = mapper;
@@ -127,4 +131,57 @@ public class UserService : IUserService
         }
     }
 
+    public async Task<UserResponse> AddPlantToCollectionAsync(int userId, int plantId)
+    {
+        var user = await _userRepository.FindByIdAsync(userId);
+        var plant = await _plantRepository.FindByIdAsync(plantId);
+
+        if (user == null || plant == null)
+            return new UserResponse("User or plant not found.");
+
+        var userPlant = new UserPlant { UserId = userId, PlantId = plantId };
+
+        try
+        {
+            await _userRepository.AddPlantToCollection(userPlant);
+            await _unitOfWork.CompleteAsync();
+
+            return new UserResponse(user);
+        }
+        catch (Exception ex)
+        {
+            return new UserResponse($"An error occurred when adding plant to collection: {ex.Message}");
+        }
+    }
+
+    public async Task<UserResponse> RemovePlantFromCollectionAsync(int userId, int plantId)
+    {
+        var user = await _userRepository.FindByIdAsync(userId);
+        var plant = await _plantRepository.FindByIdAsync(plantId);
+
+        if (user == null || plant == null)
+            return new UserResponse("User or plant not found.");
+
+        var userPlant = await _userRepository.GetUserPlantAsync(userId, plantId);
+
+        if (userPlant == null)
+            return new UserResponse("Plant not found in user's collection.");
+
+        try
+        {
+            _userRepository.RemovePlantFromCollection(userPlant);
+            await _unitOfWork.CompleteAsync();
+
+            return new UserResponse(user);
+        }
+        catch (Exception ex)
+        {
+            return new UserResponse($"An error occurred when removing plant from collection: {ex.Message}");
+        }
+    }
+
+    public async Task<IEnumerable<Plant>> GetSavedPlantsByUserIdAsync(int userId)
+    {
+        return await _userRepository.GetSavedPlantsByUserId(userId);
+    }
 }

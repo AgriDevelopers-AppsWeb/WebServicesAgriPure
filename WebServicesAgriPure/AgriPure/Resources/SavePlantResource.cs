@@ -14,6 +14,10 @@ namespace WebServicesAgriPure.AgriPure.Resources
         [Required]
         public string Image { get; set;}
 
+        [SwaggerSchema("Image 2 of plant")]
+        [Required]
+        public string Image2 { get; set; }
+
         [SwaggerSchema("Scientific Name")]
         [Required]
         public string Scientifistname { get; set; }

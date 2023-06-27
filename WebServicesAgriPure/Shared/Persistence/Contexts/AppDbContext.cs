@@ -9,7 +9,7 @@ namespace WebServicesAgriPure.Shared.Persistence.Contexts
         public DbSet<Plant> Plants { get; set; }
         public DbSet<Plot> Plots { get; set; }
         public DbSet<User> Users { get; set; }
-
+        public DbSet<UserPlant> UserPlants { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -59,6 +59,12 @@ namespace WebServicesAgriPure.Shared.Persistence.Contexts
             builder.Entity<User>().Property(p => p.FirstName).IsRequired();
             builder.Entity<User>().Property(p => p.LastName).IsRequired();
 
+
+            //USERPLANTS
+            builder.Entity<UserPlant>().ToTable("UserPlants");
+            builder.Entity<UserPlant>().HasKey(up => new { up.UserId, up.PlantId });
+            builder.Entity<UserPlant>().HasOne(up => up.User).WithMany(u => u.SavedPlants).HasForeignKey(up => up.UserId);
+            builder.Entity<UserPlant>().HasOne(up => up.Plant).WithMany(p => p.SavedByUsers).HasForeignKey(up => up.PlantId);
         }
     }
 }

@@ -5,6 +5,8 @@ using WebServicesAgriPure.Security.Domain.Models;
 using WebServicesAgriPure.Security.Domain.Services;
 using WebServicesAgriPure.Security.Resources;
 using WebServicesAgriPure.Security.Services.Communication;
+using WebServicesAgriPure.AgriPure.Domain.Models;
+using WebServicesAgriPure.AgriPure.Resources;
 
 namespace WebServicesAgriPure.Security.Controllers;
 
@@ -63,5 +65,33 @@ public class UsersController : ControllerBase
         await _userService.DeleteAsync(id);
         return Ok(new { message = "User deleted successfully" });
     }
+    [HttpPost("{userId}/plants/{plantId}")]
+    public async Task<IActionResult> AddPlantToCollection(int userId, int plantId)
+    {
+        var result = await _userService.AddPlantToCollectionAsync(userId, plantId);
+        if (!result.Success)
+            return BadRequest(result.Message);
 
+        var userResource = _mapper.Map<User, UserResource>(result.User);
+        return Ok(userResource);
+    }
+
+    [HttpDelete("{userId}/plants/{plantId}")]
+    public async Task<IActionResult> RemovePlantFromCollection(int userId, int plantId)
+    {
+        var result = await _userService.RemovePlantFromCollectionAsync(userId, plantId);
+        if (!result.Success)
+            return BadRequest(result.Message);
+
+        var userResource = _mapper.Map<User, UserResource>(result.User);
+        return Ok(userResource);
+    }
+
+    [HttpGet("{userId}/plants")]
+    public async Task<IActionResult> GetSavedPlantsByUserId(int userId)
+    {
+        var plants = await _userService.GetSavedPlantsByUserIdAsync(userId);
+        var plantResources = _mapper.Map<IEnumerable<Plant>, IEnumerable<PlantResource>>(plants);
+        return Ok(plantResources);
+    }
 }

@@ -1,4 +1,5 @@
-﻿using WebServicesAgriPure.Security.Domain.Models;
+﻿using WebServicesAgriPure.AgriPure.Domain.Models;
+using WebServicesAgriPure.Security.Domain.Models;
 
 namespace WebServicesAgriPure.Security.Domain.Repositories;
 
@@ -13,4 +14,9 @@ public interface IUserRepository
     void Update(User user);
     void Remove(User user);
 
+    Task AddPlantToCollection(UserPlant userPlant);  
+    void RemovePlantFromCollection(UserPlant userPlant); 
+    Task<IEnumerable<Plant>> GetSavedPlantsByUserId(int userId);
+
+    Task<UserPlant> GetUserPlantAsync(int userId, int plantId);
 }

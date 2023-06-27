@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using WebServicesAgriPure.AgriPure.Domain.Models;
 using WebServicesAgriPure.Security.Domain.Models;
 using WebServicesAgriPure.Security.Domain.Repositories;
 using WebServicesAgriPure.Shared.Persistence.Contexts;
@@ -47,4 +48,26 @@ public class UserRepository : BaseRepository, IUserRepository
         _context.Users.Remove(user);
     }
 
+    public async Task AddPlantToCollection(UserPlant userPlant)
+    {
+        await _context.UserPlants.AddAsync(userPlant);
+    }
+
+    public void RemovePlantFromCollection(UserPlant userPlant)
+    {
+        _context.UserPlants.Remove(userPlant);
+    }
+
+    public async Task<IEnumerable<Plant>> GetSavedPlantsByUserId(int userId)
+    {
+        return await _context.UserPlants
+            .Where(up => up.UserId == userId)
+            .Select(up => up.Plant)
+            .ToListAsync();
+    }
+
+    public async Task<UserPlant> GetUserPlantAsync(int userId, int plantId)
+    {
+        return await _context.UserPlants.FirstOrDefaultAsync(up => up.UserId == userId && up.PlantId == plantId);
+    }
 }
