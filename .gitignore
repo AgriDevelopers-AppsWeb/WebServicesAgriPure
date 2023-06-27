@@ -2,3 +2,4 @@
 bin/
 obj/
 WebServicesAgriPure/bin/Debug/net7.0/WebServicesAgriPure.dll
+*.dll
