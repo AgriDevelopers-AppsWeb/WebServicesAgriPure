@@ -4,3 +4,7 @@ obj/
 WebServicesAgriPure/bin/Debug/net7.0/WebServicesAgriPure.dll
 *.dll
 *.dll
+*.v2
+*.dll
+*.pdb
+*.cache
