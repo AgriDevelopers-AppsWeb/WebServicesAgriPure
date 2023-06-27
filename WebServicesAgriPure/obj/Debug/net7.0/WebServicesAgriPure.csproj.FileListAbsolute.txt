@@ -124,3 +124,11 @@ F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServices
 F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServicesAgriPure\obj\Debug\net7.0\WebServicesAgriPure.pdb
 F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServicesAgriPure\obj\Debug\net7.0\WebServicesAgriPure.genruntimeconfig.cache
 F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServicesAgriPure\obj\Debug\net7.0\ref\WebServicesAgriPure.dll
+F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServicesAgriPure\bin\Debug\net7.0\BCrypt.Net-Next.dll
+F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServicesAgriPure\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServicesAgriPure\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServicesAgriPure\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServicesAgriPure\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServicesAgriPure\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServicesAgriPure\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+F:\2023 - l\Aplicaciones Web\TB3\BackendAgriPure\WebServicesAgriPure\WebServicesAgriPure\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

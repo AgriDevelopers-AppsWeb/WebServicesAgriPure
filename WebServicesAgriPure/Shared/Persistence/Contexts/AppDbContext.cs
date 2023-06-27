@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebServicesAgriPure.AgriPure.Domain.Models;
+using WebServicesAgriPure.Security.Domain.Models;
 
 namespace WebServicesAgriPure.Shared.Persistence.Contexts
 {
@@ -7,6 +8,8 @@ namespace WebServicesAgriPure.Shared.Persistence.Contexts
     {
         public DbSet<Plant> Plants { get; set; }
         public DbSet<Plot> Plots { get; set; }
+        public DbSet<User> Users { get; set; }
+
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -44,6 +47,18 @@ namespace WebServicesAgriPure.Shared.Persistence.Contexts
             builder.Entity<Plot>().Property(p => p.Area).IsRequired();
             builder.Entity<Plot>().Property(p => p.Detail).HasMaxLength(120);
             builder.Entity<Plot>().Property(p => p.Quantity).IsRequired();
+            
+            
+            // Constraints
+            builder.Entity<User>().ToTable("Users");
+            builder.Entity<User>().HasKey(p => p.Id);
+            builder.Entity<User>().Property(p => 
+                p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<User>().Property(p => 
+                p.Username).IsRequired().HasMaxLength(30);
+            builder.Entity<User>().Property(p => p.FirstName).IsRequired();
+            builder.Entity<User>().Property(p => p.LastName).IsRequired();
+
         }
     }
 }
