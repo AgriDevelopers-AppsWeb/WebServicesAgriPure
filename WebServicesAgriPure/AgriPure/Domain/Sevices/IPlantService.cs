@@ -9,6 +9,8 @@ namespace WebServicesAgriPure.AgriPure.Domain.Sevices
 
         Task<PlantResponse> SaveAsync(Plant plant);
 
+        Task<PlantResponse> FindByIdAsync(int id);
+
         Task<PlantResponse> UpdateAsync(int id, Plant plant);
         
         Task<PlantResponse> DeleteAsync(int id);
