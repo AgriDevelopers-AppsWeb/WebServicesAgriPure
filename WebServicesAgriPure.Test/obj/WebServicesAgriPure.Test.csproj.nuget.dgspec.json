@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "F:\\2023 - l\\Aplicaciones Web\\TB3\\BackendAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.Test\\WebServicesAgriPure.Test.csproj": {}
+    "C:\\Users\\rodri\\Documents\\GitHub\\WebServicesAgriPure\\WebServicesAgriPure.Test\\WebServicesAgriPure.Test.csproj": {}
   },
   "projects": {
-    "F:\\2023 - l\\Aplicaciones Web\\TB3\\BackendAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.Test\\WebServicesAgriPure.Test.csproj": {
+    "C:\\Users\\rodri\\Documents\\GitHub\\WebServicesAgriPure\\WebServicesAgriPure.Test\\WebServicesAgriPure.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\2023 - l\\Aplicaciones Web\\TB3\\BackendAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.Test\\WebServicesAgriPure.Test.csproj",
+        "projectUniqueName": "C:\\Users\\rodri\\Documents\\GitHub\\WebServicesAgriPure\\WebServicesAgriPure.Test\\WebServicesAgriPure.Test.csproj",
         "projectName": "WebServicesAgriPure.Test",
-        "projectPath": "F:\\2023 - l\\Aplicaciones Web\\TB3\\BackendAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.Test\\WebServicesAgriPure.Test.csproj",
-        "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "F:\\2023 - l\\Aplicaciones Web\\TB3\\BackendAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.Test\\obj\\",
+        "projectPath": "C:\\Users\\rodri\\Documents\\GitHub\\WebServicesAgriPure\\WebServicesAgriPure.Test\\WebServicesAgriPure.Test.csproj",
+        "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rodri\\Documents\\GitHub\\WebServicesAgriPure\\WebServicesAgriPure.Test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -83,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

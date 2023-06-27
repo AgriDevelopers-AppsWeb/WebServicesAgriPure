@@ -18,8 +18,14 @@ using WebServicesAgriPure.Shared.Persistence.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add CORS
-builder.Services.AddCors();
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:5173").AllowAnyMethod().AllowAnyHeader();
+        });
+});
 
 // Add services to the container.
 
