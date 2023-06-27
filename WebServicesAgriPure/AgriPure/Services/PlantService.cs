@@ -94,5 +94,22 @@ namespace WebServicesAgriPure.AgriPure.Services
                 return new PlantResponse($"An error occurred when retrieving the plant: {ex.Message}");
             }
         }
+
+        public async Task<PlantResponse> FindByIdAsync(int id)
+        {
+            var existingPlant = await _plantRepository.FindByIdAsync(id);
+
+            if (existingPlant == null)
+                return new PlantResponse("Plant not found.");
+
+            try
+            {
+                return new PlantResponse(existingPlant);
+            }
+            catch (Exception ex)
+            {
+                return new PlantResponse($"An error occurred when retrieving the plant: {ex.Message}");
+            }
+        }
     }
 }
