@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rodri\\source\\repos\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj": {}
+    "C:\\Users\\rodri\\Documents\\GitHub\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rodri\\source\\repos\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj": {
+    "C:\\Users\\rodri\\Documents\\GitHub\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rodri\\source\\repos\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj",
+        "projectUniqueName": "C:\\Users\\rodri\\Documents\\GitHub\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj",
         "projectName": "WebServicesAgriPure",
-        "projectPath": "C:\\Users\\rodri\\source\\repos\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj",
+        "projectPath": "C:\\Users\\rodri\\Documents\\GitHub\\WebServicesAgriPure\\WebServicesAgriPure\\WebServicesAgriPure.csproj",
         "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rodri\\source\\repos\\WebServicesAgriPure\\WebServicesAgriPure\\obj\\",
+        "outputPath": "C:\\Users\\rodri\\Documents\\GitHub\\WebServicesAgriPure\\WebServicesAgriPure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -52,6 +52,14 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
